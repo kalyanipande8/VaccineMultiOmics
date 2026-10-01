@@ -1,0 +1,147 @@
+{
+  "discovered_biomarkers": [
+    {
+      "feature": "GC_density_LN",
+      "spearman_rho": 0.34209928784070925,
+      "abs_rho": 0.34209928784070925,
+      "p_value": 2.8750132391645896e-20
+    },
+    {
+      "feature": "Tfh_GC_colocalization",
+      "spearman_rho": 0.33400613358825865,
+      "abs_rho": 0.33400613358825865,
+      "p_value": 2.292948654527965e-19
+    },
+    {
+      "feature": "vaccine_specific_clonotype_freq",
+      "spearman_rho": 0.33237057956617766,
+      "abs_rho": 0.33237057956617766,
+      "p_value": 3.506191901275845e-19
+    },
+    {
+      "feature": "GENE_TBX21",
+      "spearman_rho": 0.2923349165075262,
+      "abs_rho": 0.2923349165075262,
+      "p_value": 6.0622011181470434e-15
+    },
+    {
+      "feature": "BCR_clonality",
+      "spearman_rho": 0.2874807266290682,
+      "abs_rho": 0.2874807266290682,
+      "p_value": 1.6814902686065902e-14
+    },
+    {
+      "feature": "GENE_IFNG",
+      "spearman_rho": 0.2769909355323786,
+      "abs_rho": 0.2769909355323786,
+      "p_value": 1.388633327040014e-13
+    },
+    {
+      "feature": "GENE_CXCR5",
+      "spearman_rho": 0.2718381640571542,
+      "abs_rho": 0.2718381640571542,
+      "p_value": 4.1976336362752426e-13
+    },
+    {
+      "feature": "GENE_BCL6",
+      "spearman_rho": 0.25870734428726405,
+      "abs_rho": 0.25870734428726405,
+      "p_value": 5.733567430982123e-12
+    },
+    {
+      "feature": "germinal_center_count",
+      "spearman_rho": 0.21545660898465013,
+      "abs_rho": 0.21545660898465013,
+      "p_value": 1.2281783344530657e-08
+    },
+    {
+      "feature": "somatic_hypermutation_rate",
+      "spearman_rho": 0.21404913886355437,
+      "abs_rho": 0.21404913886355437,
+      "p_value": 1.4620842845462232e-08
+    },
+    {
+      "feature": "GENE_MKI67",
+      "spearman_rho": 0.20194378714985844,
+      "abs_rho": 0.20194378714985844,
+      "p_value": 9.369654262883004e-08
+    },
+    {
+      "feature": "baseline_titer",
+      "spearman_rho": 0.1999805182551242,
+      "abs_rho": 0.1999805182551242,
+      "p_value": 1.253187453658054e-07
+    },
+    {
+      "feature": "stromal_FDC_density",
+      "spearman_rho": 0.19529439857021438,
+      "abs_rho": 0.19529439857021438,
+      "p_value": 2.4795908509216345e-07
+    },
+    {
+      "feature": "class_switch_fraction_IgG",
+      "spearman_rho": 0.16990050505170354,
+      "abs_rho": 0.16990050505170354,
+      "p_value": 7.430716004913104e-06
+    },
+    {
+      "feature": "GENE_PRF1",
+      "spearman_rho": 0.16618560311927036,
+      "abs_rho": 0.16618560311927036,
+      "p_value": 1.1956066517183797e-05
+    },
+    {
+      "feature": "GENE_TNFRSF17",
+      "spearman_rho": 0.147152987407738,
+      "abs_rho": 0.147152987407738,
+      "p_value": 0.00010836787018571185
+    },
+    {
+      "feature": "GENE_MS4A1",
+      "spearman_rho": 0.14427269341672191,
+      "abs_rho": 0.14427269341672191,
+      "p_value": 0.00014631650943756937
+    },
+    {
+      "feature": "GENE_XBP1",
+      "spearman_rho": 0.1272436305456605,
+      "abs_rho": 0.1272436305456605,
+      "p_value": 0.0008595058290582682
+    }
+  ],
+  "validation_against_ground_truth": {
+    "n_ground_truth": 18,
+    "n_discovered": 18,
+    "n_true_positives": 15,
+    "precision": 0.8333,
+    "recall": 0.8333,
+    "f1": 0.8333,
+    "true_positive_features": [
+      "BCR_clonality",
+      "GC_density_LN",
+      "GENE_BCL6",
+      "GENE_CXCR5",
+      "GENE_IFNG",
+      "GENE_MKI67",
+      "GENE_TBX21",
+      "GENE_XBP1",
+      "Tfh_GC_colocalization",
+      "baseline_titer",
+      "class_switch_fraction_IgG",
+      "germinal_center_count",
+      "somatic_hypermutation_rate",
+      "stromal_FDC_density",
+      "vaccine_specific_clonotype_freq"
+    ],
+    "false_positive_features": [
+      "GENE_MS4A1",
+      "GENE_PRF1",
+      "GENE_TNFRSF17"
+    ],
+    "missed_ground_truth_features": [
+      "age",
+      "comorbidity_count",
+      "lymphocyte_count_baseline"
+    ]
+  }
+}

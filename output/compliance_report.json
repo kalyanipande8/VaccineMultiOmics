@@ -1,0 +1,126 @@
+{
+  "overall_data_integrity_pct": 99.74,
+  "integrity_dimensions": {
+    "completeness": {
+      "score_pct": 99.644,
+      "defect_count": 219,
+      "detail": "non-null cell fraction across samples + all modality tables"
+    },
+    "range_validity": {
+      "score_pct": 99.898,
+      "defect_count": 7,
+      "detail": "clinical values within physiologically plausible bounds"
+    },
+    "uniqueness": {
+      "score_pct": 99.711,
+      "defect_count": 2,
+      "detail": "sample_id uniqueness in samples table"
+    },
+    "referential_integrity": {
+      "score_pct": 99.711,
+      "defect_count": 2,
+      "detail": "every sample has a row in all 4 modality tables"
+    }
+  },
+  "reproducibility": {
+    "reproducible": true,
+    "checks": {
+      "consolidated_tables_identical": true,
+      "discovered_biomarkers_identical": true,
+      "validation_metrics_identical": true,
+      "integrity_report_identical": true
+    },
+    "n_tables_compared": 6,
+    "integrity_pct_run_a": 99.74,
+    "integrity_pct_run_b": 99.74
+  },
+  "controls_checked": 12,
+  "controls_passed": 12,
+  "compliance_rate_pct": 100.0,
+  "checklist": [
+    {
+      "requirement_id": "ALCOA-1",
+      "framework": "ALCOA+",
+      "principle": "Attributable",
+      "control_description": "Every lineage record identifies the source script/table that produced it.",
+      "status": "PASS"
+    },
+    {
+      "requirement_id": "ALCOA-2",
+      "framework": "ALCOA+",
+      "principle": "Legible",
+      "control_description": "Lineage and compliance reports are stored as structured, human-readable JSON/CSV, not opaque binaries.",
+      "status": "PASS"
+    },
+    {
+      "requirement_id": "ALCOA-3",
+      "framework": "ALCOA+",
+      "principle": "Contemporaneous",
+      "control_description": "Every lineage record carries an ISO-8601 UTC timestamp captured at the moment of the transform.",
+      "status": "PASS"
+    },
+    {
+      "requirement_id": "ALCOA-4",
+      "framework": "ALCOA+",
+      "principle": "Original",
+      "control_description": "Raw simulated source tables are hashed and logged before any downstream transform (first lineage step per table).",
+      "status": "PASS"
+    },
+    {
+      "requirement_id": "ALCOA-5",
+      "framework": "ALCOA+",
+      "principle": "Accurate",
+      "control_description": "Data-integrity dimension scores (completeness, range validity, uniqueness, referential integrity) are computed, not asserted.",
+      "status": "PASS"
+    },
+    {
+      "requirement_id": "ALCOA-6",
+      "framework": "ALCOA+",
+      "principle": "Complete",
+      "control_description": "Completeness sub-score covers every cell in every consolidated table, including injected defects.",
+      "status": "PASS"
+    },
+    {
+      "requirement_id": "ALCOA-7",
+      "framework": "ALCOA+",
+      "principle": "Consistent",
+      "control_description": "Reproducibility check verifies identical outputs (tables, biomarkers, integrity scores) across two independent runs from the same seed.",
+      "status": "PASS"
+    },
+    {
+      "requirement_id": "ALCOA-8",
+      "framework": "ALCOA+",
+      "principle": "Enduring",
+      "control_description": "Lineage ledger is append-only (JSONL) and never overwritten within a run.",
+      "status": "PASS"
+    },
+    {
+      "requirement_id": "ALCOA-9",
+      "framework": "ALCOA+",
+      "principle": "Available",
+      "control_description": "Lineage ledger, discovered biomarkers, and compliance report are all persisted to disk under data/ and output/ for retrieval/audit.",
+      "status": "PASS"
+    },
+    {
+      "requirement_id": "21CFR11-1",
+      "framework": "21 CFR Part 11",
+      "principle": "Audit trail",
+      "control_description": "Lineage ledger functions as a computer-generated, time-stamped audit trail of data creation/modification (sec. 11.10(e)).",
+      "status": "PASS"
+    },
+    {
+      "requirement_id": "21CFR11-2",
+      "framework": "21 CFR Part 11",
+      "principle": "Record accuracy/reliability",
+      "control_description": "Content hashing (SHA-256) of each consolidated table detects any unintended alteration of records (sec. 11.10(a)).",
+      "status": "PASS"
+    },
+    {
+      "requirement_id": "REG-VALID",
+      "framework": "Computerized System Validation (GAMP5-aligned)",
+      "principle": "Reproducibility/validation",
+      "control_description": "Pipeline re-execution with identical seed yields statistically identical results, supporting process validation.",
+      "status": "PASS"
+    }
+  ]
+}

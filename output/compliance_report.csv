@@ -1,0 +1,13 @@
+requirement_id,framework,principle,control_description,status
+ALCOA-1,ALCOA+,Attributable,Every lineage record identifies the source script/table that produced it.,PASS
+ALCOA-2,ALCOA+,Legible,"Lineage and compliance reports are stored as structured, human-readable JSON/CSV, not opaque binaries.",PASS
+ALCOA-3,ALCOA+,Contemporaneous,Every lineage record carries an ISO-8601 UTC timestamp captured at the moment of the transform.,PASS
+ALCOA-4,ALCOA+,Original,Raw simulated source tables are hashed and logged before any downstream transform (first lineage step per table).,PASS
+ALCOA-5,ALCOA+,Accurate,"Data-integrity dimension scores (completeness, range validity, uniqueness, referential integrity) are computed, not asserted.",PASS
+ALCOA-6,ALCOA+,Complete,"Completeness sub-score covers every cell in every consolidated table, including injected defects.",PASS
+ALCOA-7,ALCOA+,Consistent,"Reproducibility check verifies identical outputs (tables, biomarkers, integrity scores) across two independent runs from the same seed.",PASS
+ALCOA-8,ALCOA+,Enduring,Lineage ledger is append-only (JSONL) and never overwritten within a run.,PASS
+ALCOA-9,ALCOA+,Available,"Lineage ledger, discovered biomarkers, and compliance report are all persisted to disk under data/ and output/ for retrieval/audit.",PASS
+21CFR11-1,21 CFR Part 11,Audit trail,"Lineage ledger functions as a computer-generated, time-stamped audit trail of data creation/modification (sec. 11.10(e)).",PASS
+21CFR11-2,21 CFR Part 11,Record accuracy/reliability,Content hashing (SHA-256) of each consolidated table detects any unintended alteration of records (sec. 11.10(a)).,PASS
+REG-VALID,Computerized System Validation (GAMP5-aligned),Reproducibility/validation,"Pipeline re-execution with identical seed yields statistically identical results, supporting process validation.",PASS
